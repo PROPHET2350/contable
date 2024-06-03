@@ -23,6 +23,6 @@ public class JPAOwnerCreateRepository implements OwnerCreateRepository {
 
     @Override
     public Optional<Owner> findByEmailOrIdentity(String email, String identity) {
-        return this.jpaImplOwnerRepository.findByEmailOrIdentity(email, identity);
+        return this.jpaImplOwnerRepository.findFirstByEmailOrIdentity(email, identity);
     }
 }

@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.Optional;
 
 public interface JPAImplOwnerRepository extends JpaRepository<Owner, String>, JpaSpecificationExecutor<Owner> {
-    Optional<Owner> findByEmailOrIdentity(String email, String identity);
+    Optional<Owner> findFirstByEmailOrIdentity(String email, String identity);
 }
