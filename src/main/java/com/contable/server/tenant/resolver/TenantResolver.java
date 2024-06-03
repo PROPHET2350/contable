@@ -1,4 +1,4 @@
-package com.contable.server.tenant;
+package com.contable.server.tenant.resolver;
 
 import jakarta.validation.constraints.NotNull;
 

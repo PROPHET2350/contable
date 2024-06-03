@@ -1,6 +1,6 @@
 package com.contable.server.config.interceptors;
 
-import com.contable.server.tenant.HeaderTenantInterceptor;
+import com.contable.server.tenant.resolver.HeaderTenantInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
