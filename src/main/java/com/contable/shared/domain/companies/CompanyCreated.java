@@ -1,4 +1,4 @@
-package com.contable.shared.domain.owners;
+package com.contable.shared.domain.companies;
 
 import com.contable.shared.domain.bus.DomainEvent;
 
@@ -8,25 +8,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class OwnerCreated extends DomainEvent {
-    private final String ownerEmail;
+public class CompanyCreated extends DomainEvent {
 
-    public OwnerCreated(
-            String aggregateId,
-            String ownerEmail
-    ) {
-        super(
-                aggregateId,
-                UUID.randomUUID().toString(),
-                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"))
-        );
-        this.ownerEmail = ownerEmail;
+    private final String identity;
+
+    public CompanyCreated(String aggregateId, String identity) {
+        super(aggregateId, UUID.randomUUID().toString(), LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
+        this.identity = identity;
     }
-
 
     @Override
     public String eventName() {
-        return "contable.account.owner.created";
+        return "contable.account.company.created";
     }
 
     @Override
