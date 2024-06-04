@@ -2,9 +2,7 @@ package com.contable.backoffice.companies.leads.domain;
 
 import java.util.Optional;
 
-public interface LeadsCreatorRepository {
-
-    void save(Lead lead);
+public interface LeadsFinderRepository {
 
     Optional<Lead> findById(String id);
 }

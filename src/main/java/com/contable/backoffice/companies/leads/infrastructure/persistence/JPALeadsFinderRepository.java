@@ -1,23 +1,16 @@
 package com.contable.backoffice.companies.leads.infrastructure.persistence;
 
 import com.contable.backoffice.companies.leads.domain.Lead;
-import com.contable.backoffice.companies.leads.domain.LeadsCreatorRepository;
-import org.springframework.stereotype.Service;
+import com.contable.backoffice.companies.leads.domain.LeadsFinderRepository;
 
 import java.util.Optional;
 
-@Service
-public class JPALeadsCreatorRepository implements LeadsCreatorRepository {
+public class JPALeadsFinderRepository implements LeadsFinderRepository {
 
     private final JPAImplLeadsRepository repository;
 
-    public JPALeadsCreatorRepository(JPAImplLeadsRepository repository) {
+    public JPALeadsFinderRepository(JPAImplLeadsRepository repository) {
         this.repository = repository;
-    }
-
-    @Override
-    public void save(Lead lead) {
-        this.repository.save(lead);
     }
 
     @Override

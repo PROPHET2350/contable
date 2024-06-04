@@ -106,4 +106,8 @@ public class Company extends AggregateRoot {
     public Owner getOwner() {
         return owner;
     }
+
+    public String getOwnerId() {
+        return owner.getId();
+    }
 }

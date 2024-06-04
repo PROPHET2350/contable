@@ -38,4 +38,8 @@ public class OwnerCreated extends DomainEvent {
     public DomainEvent fromPrimitives(String aggregateId, HashMap<String, Serializable> body, String eventId, String occurredOn) {
         return null;
     }
+
+    public String getOwnerEmail() {
+        return ownerEmail;
+    }
 }

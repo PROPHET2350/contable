@@ -5,7 +5,7 @@ CREATE TABLE public.backoffice_leads
     lastname                 VARCHAR(255),
     email                    VARCHAR(255),
     phone                    VARCHAR(255),
-    company                  JSON,
+    companies                JSON,
     is_sign_upload           BOOLEAN,
     is_first_product_created BOOLEAN,
     is_first_sale_done       BOOLEAN,

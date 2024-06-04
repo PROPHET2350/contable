@@ -27,8 +27,8 @@ public class Lead extends AggregateRoot {
     private String phone;
 
     @Type(JsonType.class)
-    @Column(columnDefinition = "json", name = "company")
-    private List<Company> company;
+    @Column(columnDefinition = "json", name = "companies")
+    private List<Company> companies;
 
     private Boolean isSignUpload;
 
@@ -45,7 +45,7 @@ public class Lead extends AggregateRoot {
             String lastname,
             String email,
             String phone,
-            List<Company> company,
+            List<Company> companies,
             Boolean isSignUpload,
             Boolean isFirstProductCreated,
             Boolean isFirstSaleDone
@@ -55,10 +55,49 @@ public class Lead extends AggregateRoot {
         this.lastname = lastname;
         this.email = email;
         this.phone = phone;
-        this.company = company;
+        this.companies = companies;
         this.isSignUpload = isSignUpload;
         this.isFirstProductCreated = isFirstProductCreated;
         this.isFirstSaleDone = isFirstSaleDone;
     }
 
+    public String getLeadId() {
+        return leadId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    public Boolean getSignUpload() {
+        return isSignUpload;
+    }
+
+    public Boolean getFirstProductCreated() {
+        return isFirstProductCreated;
+    }
+
+    public Boolean getFirstSaleDone() {
+        return isFirstSaleDone;
+    }
+
+    public void addCompany(Company company) {
+        this.companies.add(company);
+    }
 }

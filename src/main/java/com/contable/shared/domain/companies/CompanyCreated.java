@@ -31,4 +31,8 @@ public class CompanyCreated extends DomainEvent {
     public DomainEvent fromPrimitives(String aggregateId, HashMap<String, Serializable> body, String eventId, String occurredOn) {
         return null;
     }
+
+    public String getIdentity() {
+        return identity;
+    }
 }
