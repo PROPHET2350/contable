@@ -11,9 +11,7 @@ public class Employees {
     @Id
     private String id;
 
-    private String firstName;
-
-    private String lastName;
+    private String name;
 
     private String email;
 
@@ -33,16 +31,14 @@ public class Employees {
 
     private Employees(
             String id,
-            String firstName,
-            String lastName,
+            String name,
             String email,
             String phone,
             String password,
             Set<Role> roles
     ) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.email = email;
         this.phone = phone;
         this.password = password;
@@ -51,8 +47,7 @@ public class Employees {
 
     public static Employees create(
             String id,
-            String firstName,
-            String lastName,
+            String name,
             String email,
             String phone,
             String password,
@@ -60,8 +55,7 @@ public class Employees {
     ) {
         return new Employees(
                 id,
-                firstName,
-                lastName,
+                name,
                 email,
                 phone,
                 password,
@@ -73,14 +67,10 @@ public class Employees {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
-
-    public String getLastName() {
-        return lastName;
-    }
-
+    
     public String getEmail() {
         return email;
     }

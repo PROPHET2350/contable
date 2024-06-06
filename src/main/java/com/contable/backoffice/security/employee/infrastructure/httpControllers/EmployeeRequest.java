@@ -14,9 +14,7 @@ import java.util.UUID;
 public class EmployeeRequest {
     public String id = UUID.randomUUID().toString();
     @NotBlank(message = "The first name is required")
-    public String firstName;
-    @NotBlank(message = "The last name is required")
-    public String lastName;
+    public String name;
     @NotBlank(message = "The email is required")
     @Email(message = "The email is not valid")
     public String email;
@@ -30,7 +28,7 @@ public class EmployeeRequest {
     }
 
     public Employees toDomain(PasswordEncoder passwordEncoder) {
-        return Employees.create(id, firstName, lastName, email, phone, passwordEncoder.encode(email), roles);
+        return Employees.create(id, name, email, phone, passwordEncoder.encode(email), roles);
     }
 
 }

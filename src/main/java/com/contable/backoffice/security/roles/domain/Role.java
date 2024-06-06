@@ -4,6 +4,7 @@ import com.contable.backoffice.security.permissions.domain.Permission;
 import com.contable.shared.domain.AggregateRoot;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,7 +23,7 @@ public class Role extends AggregateRoot {
             schema = "PUBLIC",
             joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "permission_id"))
-    private Set<Permission> permissions;
+    private Set<Permission> permissions = new HashSet<>();
 
     private Boolean isDeletable;
 
