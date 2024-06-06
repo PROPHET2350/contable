@@ -14,6 +14,7 @@ public class CreateCompany {
 
     private final CompanyCreatorRepository repository;
     private final EventBus bus;
+    private final Logger logger = LoggerFactory.getLogger(CreateOwner.class);
 
     public CreateCompany(CompanyCreatorRepository repository, EventBus bus) {
         this.repository = repository;
@@ -24,11 +25,10 @@ public class CreateCompany {
         if (this.repository.findByIdentity(company.getIdentity()).isPresent())
             throw new IdentityTakenException("The identity " + company.getIdentity() + " is already taken");
         try {
-
             this.repository.save(company);
             bus.publish(company.pullDomainEvents());
         } catch (Exception e) {
-            Logger logger = LoggerFactory.getLogger(CreateOwner.class);
+            logger.error(e.getMessage(), e);
         }
 
     }

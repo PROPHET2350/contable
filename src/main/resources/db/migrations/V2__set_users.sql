@@ -1,4 +1,4 @@
-CREATE TABLE account_user
+CREATE TABLE IF NOT EXISTS public.account_user
 (
     id       VARCHAR(255) NOT NULL,
     username VARCHAR(255),
@@ -6,7 +6,7 @@ CREATE TABLE account_user
     CONSTRAINT pk_account_user PRIMARY KEY (id)
 );
 
-CREATE TABLE account_users_companies
+CREATE TABLE IF NOT EXISTS public.account_users_companies
 (
     company_id VARCHAR(255) NOT NULL,
     user_id    VARCHAR(255) NOT NULL,

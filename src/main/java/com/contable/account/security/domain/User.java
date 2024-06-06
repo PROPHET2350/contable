@@ -52,6 +52,18 @@ public class User {
     }
 
     public void addCompany(Company company) {
-        this.companies.add(company);
+        if (!this.companies.contains(company)) {
+            this.companies.add(company);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", companies=" + companies.size() +
+                '}';
     }
 }

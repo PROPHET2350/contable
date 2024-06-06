@@ -3,11 +3,16 @@ package com.contable.account.companies.domain;
 import com.contable.account.owner.domain.Owner;
 import com.contable.shared.domain.AggregateRoot;
 import com.contable.shared.domain.companies.CompanyCreated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
 
 @Entity
 @Table(name = "account_companies", schema = "PUBLIC")
-public class Company extends AggregateRoot {
+@JsonSerialize
+public class Company extends AggregateRoot implements Serializable {
     @Id
     private String id;
 
@@ -24,8 +29,9 @@ public class Company extends AggregateRoot {
 
     private String rimpe;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
+    @JsonIgnore
     private Owner owner;
 
     protected Company() {
@@ -109,5 +115,9 @@ public class Company extends AggregateRoot {
 
     public String getOwnerId() {
         return owner.getId();
+    }
+
+    public String getOwnerEmail() {
+        return owner.getEmail();
     }
 }

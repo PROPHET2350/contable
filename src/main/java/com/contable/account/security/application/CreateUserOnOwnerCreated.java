@@ -37,7 +37,7 @@ public class CreateUserOnOwnerCreated {
             Faker faker = new Faker();
             var pass = faker.internet().password();
             System.out.println("user password --------: " + pass);
-            this.repository.save(new User(owner.getId(), owner.getEmail(), encoder.encode("asd"), new HashSet<>()));
+            this.repository.save(new User(owner.getId(), owner.getEmail(), encoder.encode(pass), new HashSet<>()));
         }
     }
 }

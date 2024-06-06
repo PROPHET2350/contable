@@ -19,7 +19,7 @@ public class OwnerController {
         this.createOwner = createOwner;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/owner/add")
     public ResponseEntity<?> add(@RequestBody @Valid OwnerRequest request) {
         createOwner.save(request.toDomain());
         return new ResponseEntity<>(HttpStatus.CREATED);

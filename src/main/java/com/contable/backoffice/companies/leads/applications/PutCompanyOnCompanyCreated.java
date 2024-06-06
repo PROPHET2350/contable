@@ -22,9 +22,10 @@ public class PutCompanyOnCompanyCreated {
 
     @EventListener
     public void on(CompanyCreated event) {
-        var company = companyCreatorRepository.findByIdentity(event.getIdentity()).orElseThrow();
-        var lead = leadsCreatorRepository.findById(company.getOwnerId()).orElseThrow();
-        lead.addCompany(company);
-        this.leadsCreatorRepository.save(lead);
+//        var company = companyCreatorRepository.findByIdentity(event.getIdentity()).orElseThrow();
+//        var lead = leadsCreatorRepository.findById(company.getOwnerId()).orElseThrow();
+//        lead.addCompany(company);
+//        this.leadsCreatorRepository.save(lead);
+        //TODO: implement company view model
     }
 }
