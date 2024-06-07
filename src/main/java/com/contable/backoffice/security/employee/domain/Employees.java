@@ -19,9 +19,10 @@ public class Employees {
 
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "back_office_roles_employees",
+            schema = "PUBLIC",
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
@@ -70,7 +71,7 @@ public class Employees {
     public String getName() {
         return name;
     }
-    
+
     public String getEmail() {
         return email;
     }

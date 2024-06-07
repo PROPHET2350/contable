@@ -17,7 +17,7 @@ public class Role extends AggregateRoot {
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "back_office_roles_permissions",
             schema = "PUBLIC",

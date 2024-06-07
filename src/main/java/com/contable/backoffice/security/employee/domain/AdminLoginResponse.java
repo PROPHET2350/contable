@@ -3,10 +3,10 @@ package com.contable.backoffice.security.employee.domain;
 public class AdminLoginResponse {
     public String token;
 
-    public Employees profile;
+    public Employees user;
 
-    public AdminLoginResponse(String token, Employees profile) {
+    public AdminLoginResponse(String token, Employees user) {
         this.token = token;
-        this.profile = profile;
+        this.user = user;
     }
 }
